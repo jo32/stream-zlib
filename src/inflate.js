@@ -8,13 +8,13 @@
 var util = require('util');
 var EventEmitter = require('events');
 
-var zlib_inflate = require('../pako/lib/zlib/inflate');
-var utils        = require('../pako/lib/utils/common');
-var strings      = require('../pako/lib/utils/strings');
-var c            = require('../pako/lib/zlib/constants');
-var msg          = require('../pako/lib/zlib/messages');
-var ZStream      = require('../pako/lib/zlib/zstream');
-var GZheader     = require('../pako/lib/zlib/gzheader');
+var zlib_inflate = require('pako/lib/zlib/inflate');
+var utils        = require('pako/lib/utils/common');
+var strings      = require('pako/lib/utils/strings');
+var c            = require('pako/lib/zlib/constants');
+var msg          = require('pako/lib/zlib/messages');
+var ZStream      = require('pako/lib/zlib/zstream');
+var GZheader     = require('pako/lib/zlib/gzheader');
 
 var toString = Object.prototype.toString;
 
