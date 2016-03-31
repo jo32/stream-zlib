@@ -1,5 +1,5 @@
 /**
- *  This file is forked from: https://github.com/nodeca/pako/blob/50cd07afc4387d1be06d6da8d8aaf4f9e82f6a38/lib/inflate.js
+ *  This file is forked from: https://github.com/nodeca/pako/blob/d884686332bfe4d5a60ce656bca618c6c9adca7f/lib/inflate.js
  *  @jo32 20160301104916
  */
 
@@ -194,6 +194,7 @@ Inflate.prototype.push = function (data, mode) {
   var dictionary = this.options.dictionary;
   var status, _mode;
   var next_out_utf8, tail, utf8str;
+  var dict;
 
   // Flag to properly process Z_BUF_ERROR on testing inflate call
   // when we check that all output data was flushed.
@@ -225,7 +226,6 @@ Inflate.prototype.push = function (data, mode) {
     status = zlib_inflate.inflate(strm, c.Z_NO_FLUSH);    /* no bad return value */
 
     if (status === c.Z_NEED_DICT && dictionary) {
-      var dict;
 
       // Convert data if needed
       if (typeof dictionary === 'string') {
